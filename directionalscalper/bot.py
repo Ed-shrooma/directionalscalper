@@ -1160,8 +1160,8 @@ def trade_func(symbol):  # noqa
                             and short_pos_qty < max_trade_qty
                             and (
                                 add_short_trade_condition()
-                                or (current_ask > short_pos_price)
-                                or float(dex_upnl) < 0.0
+                                and (current_ask > short_pos_price)
+                                and float(dex_upnl) < 0.0
                             )
                         ):
                             try:
